@@ -1,0 +1,709 @@
+TD Programmation
+Exercice 1 :
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
+Algorithme : quotient, reste, ratio
+Variable 
+a, b, quot, rest : entier ;
+ratio : réel ;
+Début
+Ecrire (« saisir le premier nombre») ;
+Lire (a) ;
+Répéter 
+	              Ecrire (« saisir le second nombre») ;
+              Lire (b) ;
+Jusqu’à (b > 0) ;
+quot a div b ;
+rest a mod b ;
+ratio a / b ;
+Ecrire (« le quotient vaut : », quot) ;
+Ecrire (« le reste de la division est : », rest) ;
+Ecrire (« le quotient réel est : », ratio) ;
+Fin
+Exercice 2 :
+Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. 
+PI =  4 * arc tangeante de 1. La fonction arc tangeante est atan ex : atan(2).
+Algorithme : cercle
+Variable 
+PI, Surface, Périmètre, Rayon : réel
+Début
+Ecrire (« saisir le rayon») ;
+Lire (Rayon) ;
+Pi  4*atan(1) ;
+Périmètre<--2*PI*Rayon ;
+Surface<--PI*Rayon*Rayon ;
+Ecrire (« le périmètre vaut : », Périmètre) ;
+Ecrire (« la surface vaut : », Surface) ;
+Fin
+
+Exercice 3 :
+Version 1 :
+Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+Calculer et afficher la résistance en série : R1 + R2 +R3
+Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+Version 2 :
+Demander a l’utilisateur d’indiquer son choix.
+S’il entre la valeur  1, calculer et afficher la fréquence en série.
+S’il entre la valeur 2, calculer et afficher la fréquence en parallèle.
+
+Algorithme : Résistance
+Variable :
+R1, R2, R3, rest_serie, rest_paral, freq: réel ;
+Choix : entier ;
+Début
+// Version 1
+Ecrire (« Entrer la première résistance ») ;
+Lire (R1) ;
+Ecrire (« Entrer la deuxième résistance ») ;
+Lire (R2) ;
+Ecrire (« Entrer la troisième résistance ») ;
+Lire (R3) ;
+rest_serie R1 + R2 +R3 ;
+rest_paral (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3) ;
+Ecrire (« La résistance en série est de :», rest_serie) ;
+Ecrire (« La résistance en parallèle est de :», rest_paral) ;
+// Version 2
+Ecrire (« Faites votre choix ») ;
+Lire (Choix) ;
+Si (Choix == 1)
+Alors 
+freq  (R1/rest-serie) + (R2/rest-serie) + (R3/rest-serie) ;
+Sinon si (Choix == 2)
+Alors 
+freq  (R1/ rest_paral)  + (R2 / rest_paral) + (R3/ rest_paral) ;
+Fin si
+Sinon   Ecrire (« Vous ne pouvez choisir que 1 ou 2 ») ;
+Fin si
+Ecrire (« La fréquence est de : », freq) ;
+Fin
+Exercice 4
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+Version 2 : en utilisant une boucle
+
+Version 1 :
+Algorithme : puissance
+Variable : 
+x, puissance : réel ;
+n : entier ;
+Début
+Ecrire (« Entrer un nombre réel ») ;
+Lire (x) ;
+Ecrire (« Entrer un nombre entier ») ;
+Lire (n) ;
+puissance pow (x, n) ;
+Ecrire (« La puissance est : », puissance) ;
+Fin
+
+Version 2 :
+Algorithme : puissance
+Variable : 
+x, puissance : réel ;
+n : entier ;
+Début
+Ecrire (« Entrer un nombre réel ») ;
+Lire (x) ;
+Ecrire (« Entrer un nombre entier ») ;
+Lire (n) ;
+puissance  1
+Pour (i  1 à n) faire
+	puissance  puissance * x ;
+Fin pour
+Ecrire (« La puissance est : », puissance) ;
+Fin
+Exercice 5 :
+Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
+Algorithme : Somme
+constante
+taille = 5 ;
+Variable
+Tab : tableau [1……….5] d’entiers
+Somme, i : entier ;
+Début
+Pour ( i  1 à taille )  faire
+   Ecrire (« Saisir  tab [ »,i, «]:» ) ;
+   Lire (tab[i]) ;
+Fin pour
+
+Somme0 ;
+
+Pour   ( i 1 à taille) faire
+Somme  Somme + tab[i] ;
+Fin pour
+
+Ecrire (« La somme est », Somme) ;
+Fin
+
+Exercice 6 :
+Faire un programme qui saisit  les coordonnées de 2 points A (x1, y1) et b(x2, y2) et qui affiche la distance entre les 2 points.
+Formule : distante = racine carrée de ((x1 – x2)2  + (y1 – y2)2)
+ Racine carrée : sqrt. Ex : sqrt(7) ; <math.h>
+
+Algorithme : distance
+Variables : x1, x2, y1, y2, distance : réel
+Début
+Ecrire (« Saisir les coordonnées du point A ») ;
+Lire (x1, y1) ;
+Ecrire (« Saisir les coordonnées du point B ») ;
+Lire (x2, y2) ;
+distance  sqrt (sqr (x1 – x2)  + sqr(y1 – y2)) ;
+Ecrire (« La distance entre les 2 points est : », distance) ;
+Fin
+Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces.
+Algorithme : décomposition 
+Variable : montant_euro, billet20, billet10, billet5, piece2, piece1 ;
+Début
+Ecrire (« Entrer le montant en euro ») ;
+Lire (montant-euro) ;
+billet20  montant-euro div 20 ;  
+billet10 (montant-euro mod 20) div 10 ; 
+billet5 ( ( (montant-euro mod 20) mod 10 ) div 5) ; 
+piece2   ( ( ( (montant-euro mod 20) mod 10 ) mod 5) div 2) ; 
+piece1  ( ( ( ( (montant-euro mod 20) mod 10 ) mod 5) mod 2) div 1) ;  
+
+Ecrire («Le montant en auro est de : », billet20, billet10, billet5, piece2, piece1 »)
+Fin 
+Exercice 8 : Ecrire un algorithme permettant de résoudre une équation du second degré. 
+Ax2 + bx + c = 0
+Algorithme : équation 
+Variable : 
+a,  b,  c,  delta,  x1, x2 : réel
+Début
+Ecrire (« Entrer les valeurs de a, b et c ») ;
+Lire (a, b, c) ;
+Si (a = 0) alors
+Ecrire (« L’équation est du premier degré ») ;
+Si (b > 0) alors 
+Ecrire (« La solution est :», -c/b);
+Sinon si (a = 0 ; b = 0 ; c = 0) alors 
+Ecrire (« Tout réel est solution ») ;
+Sinon (« Pas de solution ») ;
+Fin si
+Delta  b*b – 4 *a*c ;
+Si (delta = 0) alors
+     x1 = x2 = -b/2a ;
+     Ecrire (« On a une racine double qui est », x1) ;
+      Sinon si (delta > 0) alors
+x1 = (-b –sqrt (delta)) / (2a);
+x2 = (-b –sqrt (delta)) / (2a);
+Ecrire («l'équation admet 2 racines distincts réels qui sont », x1, x2) ;
+           Sinon si (delta < 0) alors
+            Ecrire (« l'équation n'a pas de solution dans IR ») ;
+         Fin si
+Fin
+Exercice 9 : Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain. 
+
+Algorithme : durée_vol
+Variable :
+hd,  ha,  md, ma, dh, dm, sd, sa, ds: entier 
+Début
+Répéter 
+Ecrire («  entrer horaire de départ: h min s ») ;
+Lire (hd, md, sd ) ;
+Jusquà (hd > 0 ; 0 < md< 60 ; 0 < sd < 60) ;
+Répéter
+Ecrire («  entrer horaire d’arrivée: h min s ») ;
+Lire (ha, ma, sa) ;
+Jusquà (0 <= ha <24; 0 <= ma < 60 ; 0 =< sa < 60) ;
+sd  sd + (hd*3600) + (md*60);
+sa  sa + (ha*3600) + (ma*60); 
+           
+// version a
+Si (ha < hd) alors           
+               ds  sa - sd ;
+Fin si
+// version b
+Si (ha > hd) 
+	// convertir 24h en seconde
+	Jour_en_seconde  24 * 3600 ;  
+	sa  sa + jour_en_seconde ;
+	ds  sa – sd ;
+Fin si
+dh  ds div 3600 ;
+dm  ds mod 3600 ;
+
+Ecrire (« la durée de vol est : », dh, ' : ', dm) ;
+Fin
+
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières (A, B et C) et qui permet de les trier par échanges successifs Et enfin les afficher dans l'ordre. 
+Algorithme : trie
+Variable : 
+                a,  b, c : entier
+Début :
+Ecrire (« Entrer les valeurs de a, b et c)
+Lire(a) ;
+Lire(b) ;
+Lire(c) ;
+Si (a > b et b > c) alors 
+	a  a + c ;
+	c  a - c ;
+	a  a - c ;
+ Fin si 
+Si  (b > a et  a > c) alors
+	c  c + a ;  
+	a  c - a ;
+	c  c - a ;
+	c  c + b ;
+	b  c - b ;
+	c  c - b ;        
+Fin si
+Si (b > c et c > a) alors           
+	b  b + c ;  
+	c  b - c ;       
+           b  b - c ;         
+Fin si
+Si (a > c et c > b) alors         
+a  a + c ;      
+	c  a - c ;       
+	a  a - c ;       
+           a  a + b ;       
+           b  a - b ;       
+	a  a - b ;
+ Fin si
+Ecrire («Dans l’ordre croissant on a : », a, b, c) ;
+Fin
+Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération (+ ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat.
+Algorithme : Calculatrice
+Variable : 
+a, b, resultat : entier
+operant : caractère
+Début 
+Ecrire (« Entrer le premier nombre entier) ; 
+Lire (a) ;
+Ecrire (« Entrer le deuxième nombre entier) ; 
+Lire (b) ;
+Ecrire (« Entrer l’oprérant ») ; 
+Lire (opérant) ;
+Si (operant = ‘+’) alors
+     resultat = a + b ;
+	Sinon si (operant = ‘-’) alors
+    	     resultat = a - b ;
+	          Sinon si (operant = ‘*’) alors
+    	               resultat = a * b ;
+		        Sinon si (operant = ‘/’ et b != 0) alors
+    	    		 resultat = a / b ;
+Sinon Ecrire (« La division est impossible ») ;
+		        Fin si
+                       Fin si
+               Fin si
+Fin si
+Ecrire (« Le résultat de l’opération est : », resultat) ;
+Fin
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+Algorithme : somme_diviseur
+Variable : 
+nombre, somme, diviseur, i: entier
+Début
+     Répéter 
+	Ecrire («  Veuillez entrer un nombre entier ») ;
+	Lire (nombre) ;
+      Jusqu’à
+            (nombre > 0) ;
+       Pour (i de 1 à nombre - 1) faire
+	diviseur = nombre mod i;
+
+	       Si  (diviseur = 0)  alors
+		 somme  somme + i;
+	       Fin si		
+
+                   Si (somme = nombre) alors
+		 Ecrire (« Le nombre est parfait »);
+
+	        Sinon
+		Ecrire (« Le nombre n'est pas parfait »);
+		
+	          Fin si
+          Fin
+Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+Algorithme : date
+Variable : 
+jour, mois, an: entier
+Début
+Ecrire (« Veuillez entrer un jour) ;
+Lire (jour) ;
+Ecrire (« Veuillez entrer un mois) ;
+Lire (mois) ;
+Ecrire (« Veuillez entrer une année) ;
+Lire (an) ;
+Si (jour < 1 ou mois < 1 ou année < 1) alors
+     Ecrire (« L’année est invalide ») ;
+     Sinon si (jour > 31 ou mois > 12) alors 
+	     Ecrire (« L’année est invalide ») ;
+	     Sinon si (mois = 9 ou  mois = 11  et jour > 30) alors
+	                Ecrire (« L’année est invalide ») ;
+		     Sinon si (mois = 4  ou  mois = 6  ou mois =   et jour > 30) alors
+	                            Ecrire (« L’année est invalide ») ;
+                                       Sinon si (mois = 9 ou  mois = 11  et jour > 30) alors
+	                                       Ecrire (« L’année est invalide ») ;   
+		                Sinon si (an mod 4 = 0 et mois = 2 et jour > 29) alors
+		                           Ecrire (« L’année est invalide ») ;  
+	                                       Sinon si (an mod 4 != 0 et mois = 2 et jour > 28)
+                                                    alors
+					      Ecrire (« L’année est invalide ») ;  
+                                                               Sinon Ecrire (« L’année saisie est valide ») ;  
+     Fin si
+                                       Fin si
+		       Fin si
+                 Fin si
+       Fin si
+Fin si
+Fin si
+Fin
+
+Exercice 14 : Faire un programme qui saisit une date (jour, mois et année) et qui indique si l’année est bissextile.
+Algorithme : date
+Variable : 
+jour, mois, an: entier
+Début
+Ecrire (« Veuillez entrer un jour) ;
+Lire (jour) ;
+Ecrire (« Veuillez entrer un mois) ;
+Lire (mois) ;
+Ecrire (« Veuillez entrer une année) ;
+Lire (an) ;
+Si (jour < 1 ou mois < 1 ou année < 1) alors
+     Ecrire (« L’année est invalide ») ;
+     Sinon si (jour > 31 ou mois > 12) alors 
+	     Ecrire (« L’année est invalide ») ;
+	     Sinon si (mois = 9 ou  mois = 11  et jour > 30) alors
+	                Ecrire (« L’année est invalide ») ;
+		     Sinon si (mois = 4  ou  mois = 6  ou mois =   et jour > 30) alors
+	                            Ecrire (« L’année est invalide ») ;
+                                       Sinon si (mois = 9 ou  mois = 11  et jour > 30) alors
+	                                       Ecrire (« L’année est invalide ») ;                    
+		                Sinon si (an mod 4 = 0 et mois = 2 et jour > 29) alors
+		                           Ecrire (« L’année est invalide ») ;  
+	                                       Sinon si (an mod 4 != 0 et mois = 2 et jour > 28)
+                                                    alors
+					      Ecrire (« L’année est invalide ») ;  
+                                                               Sinon Ecrire (« L’année saisie est valide ») ;  
+     Fin si
+                                       Fin si
+		       Fin si
+                 Fin si
+       Fin si
+Fin si
+Fin si
+Si (an mod 4 = 0 et mois = 2) alors 
+	Ecrire (« L’année est bissextile ») ;
+                      Sinon si (an mod 4 != 0 et mois = 2) alors 
+		           Ecrire (« L’année est n’est pas bissextile ») ;
+                        Fin si
+   Fin si
+Fin
+Exercice 15 : Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre. Par exemple si l'on tape 4, l’algorithme doit calculer: 1 + 2 + 3+ 4 = 10 Réécrire l'algorithme qui calcule cette fois la moyenne !
+Algorithme : somme_entier
+Variable : 
+nombre, somme, moyenne, i : entier
+Répéter 
+       Ecrire (« Entrer un nombre entier ») ;
+       Lire (nombre) ;
+Jusqu’à 
+       (Nombre > 0) ;
+	somme   0 ;
+	moyenne  0 ;
+Pour (i de 1 à nombre) faire
+	somme = somme + i ;
+Ecrire (« La somme des entiers jusqu'à », nombre, « est », somme) ;
+Fin pour
+Moyenne  somme / nombre ;
+Fin
+Exercice 16 : Faire un programme qui calcule et affiche la division de a par b par soustractions successives.
+Algorithme : Division
+Variable : a, b, quotient : entier
+Debut
+	Répéter
+Ecrire (« Entrer deux nombre entiers») ;
+           Lire (a) ;
+Lire (b) ;
+Jusqu’à (b > 0) ;
+quotient  0 ;           
+     Tant que (a >= b) faire
+          a  a - b ;
+          quotient  quotient + 1 ;   
+      Fin tant que
+Ecrire (« La division de », a, « / », b, « est égale à : », quotient)
+Fin
+Exercice 17: Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante: soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux.
+Algorithme : PGCD
+Variable :
+        a, b : entier 
+     
+    Début
+   Répéter
+        Ecrire (« Entrez les nombres a et b ») ;
+        Lire (a) ;
+        Lire (b) ;
+    Jusqu’à (a > 0 et b > 0) ;
+   
+        Tant que (a ! = b) faire
+  	      Si (a < b) alors
+		b  b - a ;  4    9
+		Sinon 
+			a  a - b ; 
+                  Fin si			              
+
+ Fin tant que
+           Ecrire (« Le PGCD de », a, « et », b, « est :»,  b) ;
+       
+    Fin 
+
+Exercice 18: Faire un programme qui calcule et affiche le PPCM de deux entiers saisis au clavier.
+Algorithme : PPCM
+Variable :
+        a, b, c, d, r : entier 
+     
+    Début
+   Répéter
+        Ecrire (« Entrez les nombres a et b ») ;
+        Lire (a) ;
+        Lire (b) ;
+    Jusqu’à (a > 0 et b > 0) ;
+	Si (a < b) alors
+	     c  a ;
+                r  b mod a ;
+	     Sinon 
+		   c  b ;
+	              r  a mod b ;
+                    Fin si 
+    
+        Tant que (r ! = 0) faire
+  
+                 d   c ;
+      c  r ;
+      r  d mod x ;
+ 
+         
+ Fin tant que
+           Ecrire (« Le   PGCD de », a, « et », b, « est :»,  c) ;
+Ecrire (« Le   PPCM de », a, « et », b, « est :»,  (a*b) div c) ;  
+       
+    Fin 
+
+Exercice 19 : Ecrire l’algorithme qui affiche la somme des prix d'une suite d'articles en CFA (entiers) saisies par l'utilisateur et se terminant par zéro.
+Algorithme : Somme_prix
+Variable : prix, somme : entier
+Début :
+	somme  0 ;
+	Répéter
+		Répéter 
+		            Ecrire (« Entrer un prix de l’article ») ;
+           		            Lire (prix) ;
+                       Jusqu’à (prix >= 0) ;
+		            somme  somme + prix ;
+	Jusqu’à (prix = 0) ;
+Ecrire (« La somme des prix de cette suite d’article est : », somme) ;
+Fin
+Exercice 20 : Ecrire un algorithme qui demande successivement 10 nombres à  l'utilisateur, et qui affiche à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie.
+Algorithme : nombre_plus_grand
+Variable : 
+               Tab : tableau [1……….10] de réels
+	     i, indice : entier
+     plus_grand : réel
+
+Début
+	Pour (i de 1 à 10) faire
+                    Ecrire («Saisir Tab [ », i, «] :») ;
+	         Lire (Tab[i]) ;
+                     plus_grand  0 ;
+                            Si (Tab[i] > plus_grand) alors
+                                           plus_grand  Tab[i] ;
+		                     indice  i ;
+                             Fin si
+               Fin pour
+               Ecrire (« le plus grand de ces 10 nombres est : », plus_grand, « et son             rang est », indice) ;
+Fin
+
+Exercice 21 : Ecrire un algorithme mettant en œuvre le jeu suivant entre deux joueurs : Le premier utilisateur saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu'il souhaite. A chaque échec, le programme lui indique si l'entier est plus grand ou plus petit que sa proposition. Un score est affiché lorsque l'entier est trouvé.
+Algorithme : jeux_devinette
+Variable : 
+           utl1, utl2, score : entier
+Début 
+	Ecrire (« Veuillez entrer le nombre à deviner ») ;
+           Lire (utl1) ;
+	score  0 ;
+           Tant que (utl1 != utl2) faire
+           		Ecrire (« Entrer  l’entier saisi par le premier utilisateur ») ;
+           		Lire (utl2) ;
+          	   Si (utl1 < utl2) alors
+                Ecrire (« L’entier est plus petit que ta proposition ») ;
+	    	Sinon si (utl1 > utl2) alors
+              		Ecrire (« L’entier est plus grand que ta proposition ») ;
+               			Sinon Ecrire (« Vous avez donné la bonne réponse ») ;
+                                                score  score +1 ;
+		   Fin si
+               Fin si
+        Fin tant que
+Fin
+
+Exercice 22 : On se propose de saisir N entiers différents entre 1 et 100 (N étant un entier naturel compris entre 10 et 50) puis afficher la plus longue séquence croissante tout en précisant la position du premier nombre de cette séquence.
+Exemple : Pour N=15
+ 1  2  3  1  2  3  4  5  6  7  8  2  3  4  5 
+Le programme affiche :
+La plus longue séquence est 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 *   qui débute à la position 4  et elle est de longueur 8
+
+Algorithme : séquence_croissante
+Variable : 
+ Tab : tableau [1……….N] d’entiers
+i, long_seq , long_max, position, position_prec, position_max, seq_prec : entier
+Début
+            Répéter
+		Ecrire (« Entrer un nombre entier compris entre 10 et 50 ») ;
+		Lire (N) ;
+             Jusqu’à (N >10 ou N < 50)
+             Pour (i  1 à N) faire
+                     	      Répéter  
+                                       Ecrire («Saisir Tab [ », i, «] :») ;
+                                      Lire (Tab[i]) ;
+                      Jusqu’à (Tab[i] >1 ou Tab[i]  <=  100)  
+	position_prec  0 ;  
+           long_max  0 ; 
+	Pour (i  1 à N) faire
+		 Si (Tab[i] < = Tab [i + 1] alors      
+                             long-seq  long-seq +1 ;                                    
+                              Sinon          
+                                       Si (long_max < long_seq) alors  
+				long_max  long_seq ;  3
+				position  i- long_seq + 1 ;  
+                                         Fin si
+		            long_seq  1 ; 
+                         Fin si 
+                 Fin pour
+                 Pour (i  de positon à long_max) faire
+                        Ecrire («La plus longue séquence est », Tab[i]) ;
+               Fin pour
+               Ecrire (« Elle débute à la position », positon, «et se termine à la position », long_max) ;
+Fin  
+                       
+Exercice 23 : La multiplication des lapins. Vous allez faire l’acquisition d’un couple de bébés lapins. Au bout d’un mois ce couple est adulte. Le mois suivant il donne naissance à un couple de bébés lapins : vous avez maintenant 4 lapins. Puis chaque couple engendre tous les mois un nouveau couple deux mois après sa naissance. 
+Nous avons le schéma ci-contre :
+ Légende : m : bébé lapin ; M : lapin adulte. 
+• Mois 0. m m 
+• Mois 1. M M 
+• Mois 2. M M m m 
+• Mois 3. M M M M m m
+ • Mois 4. M M M M M M m m m m 
+Notons FN le nombre de lapins que l’on a au bout du N-ième mois. On convient que : F0 = 2. Nous avons donc F1 = 2 puis F2 = 4 et F3 = 6. Plaçons-nous au mois N + 2, nous aurons tous les couples de lapins du mois précédent (le mois N + 1) et toutes les progénitures des couples de lapins du mois N. Nous avons donc la relation : FN+2 = FN+1 + FN
+Rédiger un programme qui calcule de manière itérative le nombre de lapins au bout d’un an (le mois N = 12). 
+ Au bout de combien de mois dépasse-t ’on le milliard de lapins ?
+
+Algorithme : estimation_lapin
+
+Constante :
+ N = 12, milliard = 1000000000;
+
+Variable :
+            m, M, FN, i, estimation: entier;
+
+Début 
+    m  2;                   
+    FN  m;                   
+    Pour i  1 à N faire
+        Si (i = 1) alors
+            M  2;               
+            FN  M;                           
+        Sinon                                                                
+                FN  M + m;              
+                m  M ;   
+                M  FN ;           
+        Fin si        
+    Fin pour
+    Ecrire (« le nombre de lapins au bout de », N, » mois est : », FN);
+    Tant que (FN <= milliard) faire
+        N++;                   
+        FN = M + m;                    
+        m = M ;        
+        M = FN ;
+    Fin tant que
+    Ecrire ("le nombre de dépasse " + milliard + " au bout de " + N +" mois");
+FIN
+Exercice 24: Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre et à l’utilisateur 2 de le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand que le nombre secret, « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
+Algorithme : Nombre_secret
+Variable : 
+           utl1, utl2 : entier
+Début 
+	Ecrire (« Veuillez entrer le nombre secret ») ;
+           Lire (utl1) ;
+           Tant que (utl1 != utl2) faire
+           		Ecrire (« Entrer  l’entier saisi par le premier utilisateur ») ;
+           		Lire (utl2) ;
+          	   Si (utl1 > utl2) alors
+                Ecrire (« Trop petit») ;
+	    	Sinon si (utl1 < utl2) alors
+              		Ecrire (« trop grand») ;
+               			Sinon Ecrire (« Vous avez donné la bonne réponse ») ;
+		   Fin si
+               Fin si
+        Fin tant que
+Fin
+
+Exercice 25 : Ecrire le code C du programme qui affiche le texte suivant pour les chiffres de 1 à 10 :
+1 
+2 2 
+3 3 3
+Algorithme : Affiche_texte
+Variable : 
+	i, j : entier
+Début 
+	Pour (i 1 à 10) faire
+  		Pour (j 1 à 10) faire
+			Si (i >= j) alors
+                                      Ecrire (i);
+       			  Fin si
+Sinon
+                                        Ecrire (" ");
+		  Fin pour
+                Fin pour
+       Fin
+
+Ecrire un programme qui saisit un nombre et qui dit si ce nombre est premier ou pas.
+Algorithme : nombre_premier
+Variable : 
+nombre : entier 
+Début 
+	Répéter 
+		Ecrire (Veuillez entrer un nombre entier) ;
+            	Lire (nombre) ;
+	Jusqu’à (nombre > 1) ;
+            compteur  0 ;
+	Pour (i  à  nombre - 1) faire
+                    Si (nombre mod i = 0) alors 
+			compteur  compteur + 1 ;
+                           Ecrire (nombre, «est un nombre premier ») ;
+	                Sinon  Ecrire (nombre, « n’est pas un nombre premier ») ;
+           Fin si
+Fin pour
+Fin
+Exercice 26 : Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont dans l’ordre croissant ou décroissant ou quelconque.
+Algorithme : suite_nombre
+Variable : 
+Tab : tableau [1……….N] d’entiers
+N, i, croissant, decroissant : entier
+Début 
+Répéter 
+Ecrire (« Entrer la longueur de la suite) ;
+Lire (N) ;
+Jusqu’à (N > 0) ;
+croissant  0 ;
+decroissant  0 ;
+Pour (i  à N) faire
+Ecrire («Saisir Tab [ », i, «] :») ;
+                       Lire (Tab[i]) ;
+		Si (Tab [i] <= Tab [i + 1]) alors 
+		     croissant ++ ;
+                           Sinon si (Tab [i] >= Tab [i + 1]) alors
+			      decroissant ++ ;
+		    Fin si 
+		Fin si
+	  Fin pour
+             Si (croissant = N) alors
+	      Ecrire (« Les nombres saisis sont dans l’ordre croissant ») ;
+                  Sinon
+Si (decroissant = N) alors
+			Ecrire (« Les nombres saisis sont dans l’ordre décroissant ») ;
+                                  Sinon
+                                 Ecrire (« Les nombres saisis sont dans l’ordre quelconque ») ;
+		Fin si
+              Fin si
+Fin

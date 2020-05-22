@@ -1,0 +1,20 @@
+Exercice 1 :
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
+Algorithme : quotient, reste, ratio
+Variable 
+a, b, quot, rest : entier ;
+ratio : réel ;
+Début
+Ecrire (« saisir le premier nombre») ;
+Lire (a) ;
+Répéter 
+	    Ecrire (« saisir le second nombre») ;
+        Lire (b) ;
+Jusqu’à (b > 0) ;
+quot a div b ;
+rest a mod b ;
+ratio a / b ;
+Ecrire (« le quotient vaut : », quot) ;
+Ecrire (« le reste de la division est : », rest) ;
+Ecrire (« le quotient réel est : », ratio) ;
+Fin
